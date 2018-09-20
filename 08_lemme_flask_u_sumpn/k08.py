@@ -19,7 +19,9 @@ def hello_food():
 def hello_bed():
     return "There's unfinished homework!"
 
-app.run()
+if (__name__ == "__main__"):
+    app.debug = True
+    app.run()
 
 
 
