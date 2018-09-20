@@ -9,6 +9,7 @@ diction = {}
 def convertToDict(filename):
     f = open(filename, 'r')
     text = f.read().split("\n")
+    print(text)
     for x in range (1, len(text)- 2):
         cat = text[x].rsplit(',', 1)
         title = cat[0]
