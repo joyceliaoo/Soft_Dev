@@ -10,24 +10,26 @@ app = Flask(__name__) #instantiates the Flask class using a constructor
 
 def table(file_name):
     values = {} #initialize dictionary
-    with open('occupations.csv') as csvfile: #opens the file for reading as a csv file
-        reader = csv.DictReader(csvfile) #special type of reading that lets us use the first row as labels for the columns
+    #opens the file for reading as a csv file
+    with open('occupations.csv') as csvfile:
+        #special type of reading that uses the first row as labels for the columns
+        reader = csv.DictReader(csvfile)
         for row in reader:
-            values[row['Job Class']] = float(row['Percentage']) #for each row put each column pair in the dictionary
-        del values['Total'] #delete the last "total" value
+            #create key-value pairs for each row
+            values[row['Job Class']] = float(row['Percentage']) 
         return values
 
 dictionary = table('occupations.csv') #dictionary created from csv file
 
 #returns a random occupation
 def pick_job(dictionary):
-    list_jobs = [] #makes empty list
-    for key in dictionary:
-        num_jobs = int(10*dictionary[key]) #takes the value of each key and makes it put 10x that number of keys into the list
-        while num_jobs > 0:
-            list_jobs.append(key)
-            num_jobs -= 1
-    return random.choice(list_jobs) #choose a random value in the mega list
+     rand_float = random.uniform(0, 99.8) #generates a random float in range [0, 99.8]
+     if rand_float < 6.1: #when it is less than the first percentage
+         return "No job found :("
+     for occupation in dictionary:
+         rand_float -= dictionary[occupation] #subtract each percentage going down the list
+         if rand_float <= 0: #has arrived at the right interval
+             return occupation
 
 @app.route("/")
 def homepage():
@@ -36,7 +38,7 @@ def homepage():
 def display_occ():
     return render_template("template.html",
                            title = "Occupations" ,
-			   head = " Table containing information about occupations in the United States  (courtesy of Mr. Brooks) ",
+			   head = " Table containing information about occupations in the United States (courtesy of Mr. Brooks) ",
                            randOccupation = pick_job(dictionary),
                            dict = dictionary)
 	
