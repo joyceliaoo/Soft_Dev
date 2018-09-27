@@ -8,9 +8,9 @@ from flask import Flask, render_template, request
 app = Flask(__name__)
 
 @app.route('/')
-def welcome():
+def home():
     return render_template('template.html',
-                            title = "Welcome",
+                            title = "Home",
                             home_page = True)
 
 @app.route('/welcome')
