@@ -1,16 +1,35 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>hi</title>
+    {% if title %}
+    <title>{{title}}</title>
+    {% endif %}
   </head>
   <body>
-    <form action="/req">
-    hello
-    <br>
-    
-    <input type="text" name="field0"></input>
-    <input type="submit" name="submit"></input>
-    </form>
+    {% if home_page %}
+    <center>
+      <h3>Hi there! Press the button to begin:</h3>
+      <br>
+      <form action="/welcome">
+	username
+	<input type="text" name="username" style="border:solid; 2px"></input>
+	<br><br>
+	<input type="submit" name="submitButton" value="I'm ready!"></input>
+      </form>
+    </center>
+    {% endif %}
+
+    {% if username %}
+    <center>
+      <h3>Got it, {{username}}!
+	Stay tuned for more exciting features :)</h3>
+      <h4>username: {{username}}</h4>
+      {% if req_method %}
+      <h4>request method used: {{req_method}}</h4>
+      {% endif %}
+      <a href='/'>back to home</a>
+    </center>
+    {% endif %}
   </body>
 </html>
 
