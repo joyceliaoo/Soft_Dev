@@ -13,12 +13,18 @@ def home():
                             title = "Home",
                             home_page = True)
 
-@app.route('/welcome')
+@app.route('/welcome', methods=['GET', 'POST'])
 def greetings():
+    rme = request.method
+    uname = " "
+    if (rme == 'GET'):
+        uname = request.args['username']
+    else:
+        uname = request.form['username']
     return render_template('template.html',
                            title = "Welcome",
-                           username = request.args['username'],
-                           req_method = request.method)
+                           username = uname,
+                           req_method = rme)
 
 if (__name__) == ("__main__"):
     app.debug = True
