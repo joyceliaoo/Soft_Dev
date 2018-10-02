@@ -21,30 +21,26 @@ def login():
 
 @app.route('/auth',methods=["POST"])
 def authenticate():
-    print(request.form['username'])
-    session['username'] = request.form['username']
-    session['password'] = request.form['password']
-    print(request.cookies.get('username'))
-    username = session['username']
-    if not(username in combo):
+    #print(request.form['username'])
+    if not(request.form['username'] in combo):
         return render_template('error.html',
                                msg = "Sorry, username does not exist!")
-    elif session['password'] != combo[username]:
+    elif request.form['password'] != combo['softdev']:
         return render_template('error.html',
                                msg = "Sorry, wrong password!")
     else:
+        session[request.form['username']] = request.form['password']
         return redirect(url_for('welcome_user'))
 
 
 @app.route('/welcome')
 def welcome_user():
     return render_template("welcome.html",
-                           name = session['username'])
+                           name = 'softdev')
 
 @app.route('/exit')
 def logout():
-    session.pop('username')
-    session.pop('password')
+    session.pop('softdev')
     return redirect(url_for('login'))
     
 
