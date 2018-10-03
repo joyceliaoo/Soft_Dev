@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% block changeTitle %}
+    <title>Login</title>
+	{% endblock %}
+  </head>
+  <body>
+	<center>
+	  <img src="https://i.ytimg.com/vi/S6kNy0Kforo/maxresdefault.jpg" style="width:128px;height:72px;">
+	{% block content %}
+	{% block msg %}
+      <h3>"Hello Bravest Warrior, Catbug Speaking! Log in to begin"</h3>
+	  {% endblock %}
+      <form action="/auth" method="POST">
+	username <br>
+	<input type="text" name="username"></input>
+	<br><br>
+	password <br>
+	<input type="password" name="password"></input>
+	<br><br>
+	<input type="submit" name="submitButton" value="Login"></input>
+      </form> <br> <br>
+	  {% endblock %}
+	{% block footer %}
+	Not &copy; Team Catbug (Catbug is from Bravest Warriors).<br>
+	Joyce Liao, Vincent Chi
+	{% endblock %}
+    </center>
+  </body>
+</html>
+

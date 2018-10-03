@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	{% extends 'login.html' %}
+	{% block changeTitle %}
+	<title>Login Failed</title>
+	  {% endblock %}
+	{% block msg %}
+	<h3>
+	  "Error!
+	  {% set messages = get_flashed_messages() %}
+	  {% for each in messages %}
+	  {{each}}"
+	  {% endfor %}
+	</h3>
+	{% endblock %}
+</html>
+
