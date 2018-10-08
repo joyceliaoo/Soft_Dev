@@ -36,7 +36,7 @@ def populate_table(listname, tablename):
 people  = convert_to_list('data/peeps.csv')
 #print(people)
 #build SQL stmt, save as string
-command = "CREATE TABLE peeps (name TEXT, age INTEGER, id INTEGER)" #create new table for peep.csv
+command = "CREATE TABLE peeps (name TEXT, age INTEGER, id INTEGER PRIMARY KEY)" #create new table for peeps.csv
 c.execute(command)    #run SQL statement
 populate_table(people, 'peeps')
 
@@ -47,9 +47,12 @@ command = "CREATE TABLE courses (code TEXT, mark INTEGER, id INTEGER)"
 c.execute(command)
 populate_table(classes, 'courses')
 
+c.execute("SELECT * FROM peeps")
+
 
 #==========================================================
 
 db.commit() #save changes
+
 db.close()  #close database
 
