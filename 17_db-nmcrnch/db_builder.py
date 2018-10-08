@@ -62,7 +62,7 @@ def compute_average(student):
 
 
 gradebook = {} #stores students' grades
-command = "SELECT name, id from ROSTER" 
+command = "SELECT name, id FROM roster" 
 c.execute(command) #get entire list of students
 students = c.fetchall()
 for student in students:
