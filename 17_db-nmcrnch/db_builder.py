@@ -1,4 +1,4 @@
-#Team  -- Cheryl Qian, Joyce Liao
+#Team Ferrero -- Cheryl Qian, Joyce Liao
 #SoftDev1 pd8
 #K17 -- Average
 #2018-10-08
