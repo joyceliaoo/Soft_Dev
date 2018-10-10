@@ -31,16 +31,16 @@ with open('data/courses.csv') as csvfile:
     c.execute(command)    #run SQL statement
     reader = csv.DictReader(csvfile)
     for row in reader:
-        command = "INSERT INTO courses Values( '{0}', {1}, {2})".format(row['code'], row['mark'], row['id'])
-        c.execute(command)
+        command = "INSERT INTO courses Values(?,?,?)"
+        c.execute(command, (row['code'], row['mark'], row['id']))
 
 #c.execute("SELECT * FROM courses")
 #print(c.fetchall())
 
 #==========================================================
 def grade_lookup(student):
-    command = "SELECT id FROM roster WHERE name = '{0}'".format(student) 
-    c.execute(command) #look up student by name
+    command = "SELECT id FROM roster WHERE name = ?")
+    c.execute(command, (student)) #look up student by name
     id = c.fetchone()[0] #retrieve id
     #print(id)
     command = "SELECT code, mark FROM courses WHERE id = " + str(id)
