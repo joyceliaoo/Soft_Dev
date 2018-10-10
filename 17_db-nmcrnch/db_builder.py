@@ -20,8 +20,8 @@ with open('data/peeps.csv') as csvfile:
     c.execute(command)    #run SQL statement
     reader = csv.DictReader(csvfile)
     for row in reader:
-        command = "INSERT INTO roster Values( '{0}', {1}, {2})".format(row['name'], row['age'], row['id'])
-        c.execute(command)
+        command = "INSERT INTO roster Values(?,?,?)"
+        c.execute(command, (row['name'], row['age'], row['id']))
         
 #c.execute("SELECT * FROM roster")
 #print( c.fetchall())
