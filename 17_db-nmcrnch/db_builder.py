@@ -39,8 +39,8 @@ with open('data/courses.csv') as csvfile:
 
 #==========================================================
 def grade_lookup(student):
-    command = "SELECT id FROM roster WHERE name = ?")
-    c.execute(command, (student)) #look up student by name
+    command = "SELECT id FROM roster WHERE name = '{0}'".format(student) 
+    c.execute(command) #look up student by name
     id = c.fetchone()[0] #retrieve id
     #print(id)
     command = "SELECT code, mark FROM courses WHERE id = " + str(id)
