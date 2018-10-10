@@ -77,8 +77,8 @@ for entry in gradebook:
 command = "CREATE TABLE peeps_avg (id INTEGER PRIMARY KEY, average NUMERIC)"
 c.execute(command)
 for entry in gradebook:
-    command = "INSERT INTO peeps_avg Values({0}, {1})".format(entry, gradebook[entry][1])
-    c.execute(command)
+    command = "INSERT INTO peeps_avg Values(?,?)"
+    c.execute(command, (entry, gradebook[entry][1]))
 
 #c.execute("SELECT * FROM peeps_avg")
 #print(c.fetchall())
@@ -89,8 +89,8 @@ def add_courses(student, course, mark):
     target = c.fetchone()
     if target is not None: #check if student is listed on the roster
         id = target[0] #get id of selected student
-        command = "INSERT INTO courses Values('{0}', {1}, {2})".format(course, mark, id) #add corresponding values into course table
-        c.execute(command)
+        command = "INSERT INTO courses Values(?, ?, ?)" #add corresponding values into course table
+        c.execute(command,(course, mark, id))
     else:
         print("Student is not on roster")
 
