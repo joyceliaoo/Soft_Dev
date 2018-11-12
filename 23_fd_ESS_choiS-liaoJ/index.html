@@ -1,8 +1,8 @@
-<!-- 
+<!--
 Team E.S.S. -- Soojin Choi, Joyce Liao
 Softdev1 pd8
 K23 -- How the Other Half Lives
-2018-11-11 
+2018-11-11
 -->
 
 <!DOCTYPE html>
@@ -19,14 +19,12 @@ K23 -- How the Other Half Lives
       <h1>Foundation Learnination</h1>
     </div>
   </div>
-  <div class="grid-y medium-grid-frame">
   <div class="grid-x grid-padding-x">
     <div class="cell medium-2 medium-cell-block-y">
       <ul class="vertical menu" style="background-color:whitesmoke;">
         <li><a href="#main1"><b>Main Features</b></a>
           <ul class="nested vertical menu">
             <li><a href="#f0">Grids</a></li>
-            <li><a href="#f1">Typography</a></li>
             <li><a href="#f2">Navigation</a></li>
             <li><a href="#f3">Control</a></li>
             <li><a href="#f4">Containers</a></li>
@@ -98,53 +96,95 @@ K23 -- How the Other Half Lives
           </div>
         </div>
       <hr>
-      <h3 id="f1"> Typography </h3>
-      <p>Basic typogaphical features...</p>
-      <div class="callout primary">
-        <h1>Large header</h1>
-        <h2>Ordered list:</h2>
-        <ol>
-          <li>item uno
-            <ol>
-              <li>list inside</li>
-              <li>a list</li>
-            </ol></li>
-          <li>item dos</li>
-        </ol>
-        <h3>description list</h3>
-        <dl>
-          <dt>bolded term</dt>
-          <dd>description</dd>
-          <dt>another one</dt>
-          <dd>example</dd>
-        </dl>
-        <hr>
-        <h4>separation of powers</h4>
-        <hr>
-        <h5>block quote</h5>
-        <blockquote>Oh, woe is me
-          <cite>Ophelia</cite></blockquote>
-      </div>
-      <hr>
       <h3 id="f2"> Navigation </h3>
-      <p></p>
+      <p>A navbar with active/inactive links in the left and a search bar on the right...</p>
+      <div class="top-bar">
+      <div class="topbar-left">
+      <ul class="menu">
+        <li class="is active"><a href="#">active link</a></li>
+        <li><a href="#">link 2</a></li>
+      </ul>
+      </div>
+      <div class="top-bar-right">
+      <ul class="menu">
+        <li><input type="search" placeholder="Search"></li>
+        <li><button class="button">Search</button></li>
+      </ul>
+      </div>
+      </div>
+     <br>
+      <p>Pagination to navigate between pages...</p>
+      <div class="pagination">
+        <li class="pagination-previous disabled">Previous</li>
+        <li class="current">1</li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li class="ellipsis"></li>
+        <li><a href="#">8</a></li>
+        <li><a href="#">9</a></li>
+        <li class="pagination-next"><a href=#>Next</a></li>
+      </div>
       <hr>
       <h3 id="f3"> Control </h3>
-      <p></p>
+      <p>Buttons can have different colors through their different types:
+        <br>
+        - primary - secondary - success - alert - warning -
+        <br>
+        <br>
+        Buttons can also have different sizes:
+        <br>
+        - tiny - small - standard - large - expanded -
+        <br>
+        Some link while others are action buttons.
+      </p>
+        <br>
+      <a href="#" class = "button tiny primary"> Tiny Linking Primary! </a>
+      <button type = "button" class = "button small secondary"> Small Secondary Action! </button>
+      <button type = "button" class = "button success"> Standard Success! </button>
+      <button type = "button" class = "button large alert"> Large Alert! </button>
+      <button type = "button" class = "button expanded warning"> Expanded Warning! </button>
+        <br>
+      <p>Buttons can be hollow, clear or disabled </p>
+      <button type = "button" class = "button hollow tiny primary"> Tiny Primary! </button>
+      <button type = "button" class = "button clear small secondary"> Small Secondary! </button>
+      <button type = "button" class = "button disabled success"> Original Success! </button>
+      <p>And button groups: basic ones and expanded button-groups </p>
+      <div class="button-group">
+        <a class="button">A</a>
+        <a class="button">Basic</a>
+        <a class="button">Button</a>
+        <a class="button">Group</a>
+      </div>
       <hr>
       <h3 id="f4"> Containers </h3>
-      <p></p>
+      <p> Used to seperate content. Some examples are callouts and cards </p>
+      <div class = "callout primary">
+        This is a callout that can have a variety of of colors
+      </div>
+      <div class = "callout success">
+        based on the same keywords as the buttons above.
+      </div>
+      <div class="card">
+        <div class="card-section">
+          example of a card-section:
+        </div>
+        <div class="card-section">
+          <img src="https://via.placeholder.com/100?text=card-section image">
+        </div>
+      </div>
       <hr>
       <h3 id="f5"> Media </h3>
+      <p>embedding videos with <code>responsive-embed</code> and using the embed url as opposed to the browsing url</p>
+      <div class="responsive-embed">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/HxlO1URMXak" frameborder="0" allowfullscreen></iframe>
       </div>
     </div>
-    <div class="callout secondary">
+  </div>
+  <div class="callout secondary">
     <h4 id="main2">Credits</h4>
-    This site is created with the assistance of instructions and source code from team Sephora!</div>
-    </div>
+    This site is created with the assistance of instructions and source code from team Sephora and team Oogabooga!</div>
   </div>
 </div>
-
   </body>
 
 </html>
