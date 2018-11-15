@@ -1,11 +1,12 @@
 #Joyce Liao
 #SoftDev1 pd8
-#K24 -- A RESTful Journey Skyward
-#2018-11-14
+#K25 -- Getting More REST
+#2018-11-15
 
-from flask import Flask, render_template
 import urllib.request
 import json
+
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
