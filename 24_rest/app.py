@@ -14,9 +14,9 @@ def home():
 	obj = urllib.request.urlopen('https://api.nasa.gov/planetary/apod?date=2018-11-12&api_key=03XZMhIrwzaAFyGNInqzU0M9uCvttt56biaVYJEk')
 	byte_data = obj.read() #reads data from response object
 	data = json.loads(byte_data) #converts json format data into dictionary
-	#print(data_dict)
-	#print(data_dict['url'])
-	return render_template("index.html", pic=data_dict['url'], description=data_dict['explanation'])
+	#print(data)
+	#print(data['url'])
+	return render_template("index.html", pic=data['url'], description=data['explanation'])
 
 if (__name__ == "__main__"):
 	app.debug = True
