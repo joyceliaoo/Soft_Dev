@@ -1,3 +1,8 @@
+#Joyce Liao
+#SoftDev1 pd8
+#K26 -- Getting more REST
+#2018-11-15
+
 from urllib import request
 import json
 
