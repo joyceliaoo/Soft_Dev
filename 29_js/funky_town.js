@@ -37,20 +37,24 @@ var fibbut = document.getElementById("fib");
 var gcdbut = document.getElementById("gcd");
 var ranbut = document.getElementById("random");
 // console.log(ranbut);
+var d_block = document.getElementById("data");
 
 var get_fib_7 = function() {
     data = fib(7);
     console.log(data);
+    d_block.innerHTML = "7th fib is " + data;
 }
 
 var get_gcd_2490 = function() {
     data = gcd(24,90);
     console.log(data);
+    d_block.innerHTML = "GCD of 24 and 90 is " + data;
 }
 
 var get_ran = function() {
     data = randomStudent();
     console.log(data);
+    d_block.innerHTML = "random student: " + data;
 }
 
 fibbut.addEventListener('click', get_fib_7);
